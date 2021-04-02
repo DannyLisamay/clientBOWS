@@ -8,6 +8,7 @@ import About from './pages/about';
 import Contact from './pages/contact';
 import Mountainfinder from './pages/mountainfinder';
 import Resort from './components/Resort/Resort';
+import NotFoundPage from './pages/notfoundpage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/contact' component={Contact} />
         <Route path='/mountainfinder' component={Mountainfinder} />
         <Route path='/resort' component={Resort} />
+        <Route path="*" component={NotFoundPage} />
       </Switch>
     </Router>
   );

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Tab, Tabs } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { getWeatherData } from './data/weatherAPI'
 // days array
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -50,7 +50,7 @@ const WeatherWidget = () => {
                             {weatherdata.list[9].weather[0].description}
                         </div>
                         <div class="weatherBox">
-                            {day2} < br />
+                            {day3} < br />
                             {weatherdata.list[16].main.temp} < br />
                             <img src={'http://openweathermap.org/img/wn/' + weatherdata.list[16].weather[0].icon + '@2x.png'} /><br />
                             {weatherdata.list[16].weather[0].description}

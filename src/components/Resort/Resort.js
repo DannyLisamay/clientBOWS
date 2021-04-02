@@ -1,5 +1,5 @@
 // Resort component 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Tab, Tabs } from 'react-bootstrap';
@@ -32,19 +32,22 @@ const Resort = () => {
     </div>);
     var activities = (<div>
         <h6>Activities</h6>
-        <p>***DESCRIPTION PLACE HOLDER*** <br />
+        <p>***ACTIVITIES PLACE HOLDER*** <br />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
     </div>);
     var events = (<div>
-        <p>***DESCRIPTION PLACE HOLDER***
+        <p>***EVENTS PLACE HOLDER***<br />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p></div>);
     var reviews = (<div>
-        <p>***DESCRIPTION PLACE HOLDER***
+        <p>***REVIEW PLACE HOLDER***<br />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p></div>);
-    var prices = (<div><p>***DESCRIPTION PLACE HOLDER***</p></div>);
+    var prices = (<div>
+        <p>***PRICE PLACE HOLDER*** <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p></div>);
 
     // Default return for resort component
     return (

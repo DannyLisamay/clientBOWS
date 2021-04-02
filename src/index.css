@@ -43,6 +43,15 @@ h1 {
   background-position: center;
 }
 
+.backgrounderror {
+  background-image: url('images/notfoundpage.png');
+  position: fixed;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center;
+}
+
 .searchbar {
   text-align: center;
   align-items: center;

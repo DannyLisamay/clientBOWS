@@ -62,3 +62,23 @@ const WeatherWidget = () => {
     </div>);
 }
 export default WeatherWidget;
+/*
+<div class="weatherBox">
+                            {day1}<br />
+                            {weatherdata.list[0].main.temp}<br />
+                            <img src={'http://openweathermap.org/img/wn/' + weatherdata.weather[0].icon + '@2x.png'} /><br />
+                            {weatherdata.list[0].weather[0].description}
+                        </div>
+                        <div class="weatherBox">
+                            {day1} < br />
+                            {weatherdata.list[0].main.temp} < br />
+                            <img src={'http://openweathermap.org/img/wn/' + weatherdata.weather[0].icon + '@2x.png'} /><br />
+                            {weatherdata.list[0].weather[0].description}
+                        </div>
+                        <div class="weatherBox">
+                            {day1} < br />
+                            {weatherdata.list[0].main.temp} < br />
+                            <img src={'http://openweathermap.org/img/wn/' + weatherdata.weather[0].icon + '@2x.png'} /><br />
+                            {weatherdata.weather[0].description}
+                        </div>
+                        */

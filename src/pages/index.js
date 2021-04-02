@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Snowboarder from '../images/snowboarder.jpg'
+import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
@@ -16,7 +17,10 @@ const Home = () => {
         
                 <div class= "searchbar">
                     <input type="text" class= "searchbar" placeholder="Please enter your zipcode or a Resort name"></input> 
-                    <button type="submit" class= "searchbutton">SUBMIT </button>
+                    
+                    <Link to ="/resort"> 
+                        <button type="submit" class= "searchbutton">SUBMIT </button>
+                    </Link>
                 </div>
             </div>
         </div>

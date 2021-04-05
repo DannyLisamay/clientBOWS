@@ -140,7 +140,7 @@ form{
 }
 
 .box{
-  padding: 5%;
+  padding: 2%;
 }
 
 .weatherBox{
@@ -155,3 +155,30 @@ form{
   min-height: 50%;
   min-width: 100%;
 }
+
+.sortBy{
+  padding: 10px;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.lblSortBy {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: small;
+}
+
+.btnSortBy {
+  min-width: 10%;
+}
+
+.lblCompare {
+  padding-right: 5px;
+  font-size: small;
+}
+
+.btnCompare {
+  min-width: 10%;
+  padding-right: 5px;
+}
+

@@ -11,8 +11,8 @@ const date = new Date();
 // current day
 const day1 = days[date.getDay()];
 // 2 days after current day
-const day2 = days[date.getDay() + 1];
-const day3 = days[date.getDay() + 2];
+const day2 = days[(date.getDay() + 1) % 7];
+const day3 = days[(date.getDay() + 2) % 7];
 
 const WeatherWidget = () => {
     // weather Data
@@ -36,23 +36,23 @@ const WeatherWidget = () => {
         {
             weatherdata !== null ? (
                 <Container>
-                    <Row>
+                    <Row class="flex-nowrap">
                         <div class="weatherBox">
                             {day1}<br />
                             {weatherdata.list[0].main.temp}<br />
-                            <img src={'http://openweathermap.org/img/wn/' + weatherdata.list[0].weather[0].icon + '@2x.png'} /><br />
+                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[0].weather[0].icon + '@2x.png'} /><br />
                             {weatherdata.list[0].weather[0].description}
                         </div>
                         <div class="weatherBox">
                             {day2} < br />
                             {weatherdata.list[9].main.temp} < br />
-                            <img src={'http://openweathermap.org/img/wn/' + weatherdata.list[8].weather[0].icon + '@2x.png'} /><br />
+                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[8].weather[0].icon + '@2x.png'} /><br />
                             {weatherdata.list[9].weather[0].description}
                         </div>
                         <div class="weatherBox">
                             {day3} < br />
                             {weatherdata.list[16].main.temp} < br />
-                            <img src={'http://openweathermap.org/img/wn/' + weatherdata.list[16].weather[0].icon + '@2x.png'} /><br />
+                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[16].weather[0].icon + '@2x.png'} /><br />
                             {weatherdata.list[16].weather[0].description}
                         </div>
                     </Row>

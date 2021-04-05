@@ -9,6 +9,7 @@ import Contact from './pages/contact';
 import Mountainfinder from './pages/mountainfinder';
 import Resort from './components/Resort/Resort';
 import NotFoundPage from './pages/notfoundpage';
+import Compare from './pages/compare';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/contact' component={Contact} />
         <Route path='/mountainfinder' component={Mountainfinder} />
         <Route path='/resort' component={Resort} />
+        <Route path='/compare' component={Compare} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </Router>

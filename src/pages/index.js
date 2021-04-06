@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
     return (
         <div>
-            <h1> This is the Logo/Homepage </h1>
             <div class="aboutme">
                 <p>
                     Please enter your zipcode or search up a resort you want to search for.

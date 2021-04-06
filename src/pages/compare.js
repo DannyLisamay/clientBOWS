@@ -2,7 +2,7 @@ import React from 'react'
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import { SortBy } from "../components/Compare/Compare";
+import { SortBy, ResortList } from "../components/Compare/Compare";
 
 const Compare = () => {
     return (
@@ -11,6 +11,7 @@ const Compare = () => {
                 <Row>
                     <SortBy />
                 </Row>
+                <ResortList />
             </Container>
         </div>
     );

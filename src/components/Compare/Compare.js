@@ -65,7 +65,4 @@ const ResortList = () => {
     )
 };
 
-
-
-
 export { SortBy, ResortList }

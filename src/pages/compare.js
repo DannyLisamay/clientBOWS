@@ -1,12 +1,12 @@
 import React from 'react'
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { SortBy, ResortList } from "../components/Compare/Compare";
 
 const Compare = () => {
     return (
-        <div class="box">
+        <div className="box">
             <Container fluid>
                 <Row>
                     <SortBy />

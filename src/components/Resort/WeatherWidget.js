@@ -35,23 +35,23 @@ const WeatherWidget = () => {
         {
             weatherdata !== null ? (
                 <Container>
-                    <Row class="flex-nowrap">
+                    <Row className="flex-nowrap">
                         <div class="weatherBox">
                             {day1}<br />
                             {weatherdata.list[0].main.temp}<br />
-                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[0].weather[0].icon + '@2x.png'} /><br />
+                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[0].weather[0].icon + '@2x.png'} alt="weatherBox0" /><br />
                             {weatherdata.list[0].weather[0].description}
                         </div>
-                        <div class="weatherBox">
+                        <div className="weatherBox">
                             {day2} < br />
                             {weatherdata.list[9].main.temp} < br />
-                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[8].weather[0].icon + '@2x.png'} /><br />
+                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[8].weather[0].icon + '@2x.png'} alt="weatherBox1" /><br />
                             {weatherdata.list[9].weather[0].description}
                         </div>
-                        <div class="weatherBox">
+                        <div className="weatherBox">
                             {day3} < br />
                             {weatherdata.list[16].main.temp} < br />
-                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[16].weather[0].icon + '@2x.png'} /><br />
+                            <img src={'https://openweathermap.org/img/wn/' + weatherdata.list[16].weather[0].icon + '@2x.png'} alt="weatherBox2" /><br />
                             {weatherdata.list[16].weather[0].description}
                         </div>
                     </Row>

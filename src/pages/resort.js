@@ -7,7 +7,7 @@ import { ResortInfo, ResortInfoTabBox1, ResortInfoTabBox2 } from "../components/
 
 const Resort = () => {
     return (
-        <div class="box" >
+        <div className="box" >
             <Container fluid>
                 <Row>
                     <Col xs={12} md={6} lg={4}>

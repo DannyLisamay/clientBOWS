@@ -29,19 +29,19 @@ const searchzipcode = (data) => {
 const Home = () => {
     return (
         <div>
-            <div class="aboutme">
+            <div className="aboutme">
                 <p>
                     Please enter your zipcode or search up a resort you want to search for.
             </p>
             </div>
-            <div class="background">
+            <div className="background">
 
 
-                <div class="searchbar">
-                    <input type="text" id="zipcode" class="searchbar" placeholder="Please enter your zipcode or a Resort name"></input>
+                <div className="searchbar">
+                    <input type="text" id="zipcode" className="searchbar" placeholder="Please enter your zipcode or a Resort name"></input>
 
                     <Link to="/compare">
-                        <button onClick={searchzipcode} class="searchbutton">SUBMIT </button>
+                        <button onClick={searchzipcode} className="searchbutton">SUBMIT </button>
 
                     </Link>
                 </div>

@@ -49,7 +49,7 @@ const ResortInfoTabBox1 = () => {
         </p>
     </div>);
     return (
-        <div class="tabBox">
+        <div className="tabBox">
             <Tabs defaultActiveKey="Description" id="uncontrolled-tab-example">
                 <Tab eventKey="Description" title="Description">
                     {description}
@@ -125,7 +125,7 @@ const ResortInfoTabBox2 = () => {
 
         </p></div>);
     return (
-        <div class="tabBox">
+        <div className="tabBox">
             <Tabs defaultActiveKey="Activities" id="uncontrolled-tab-example">
                 <Tab eventKey="Activities" title="Activities">
                     {activities}

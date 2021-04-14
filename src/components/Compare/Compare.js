@@ -25,7 +25,7 @@ const listResorts = resorts.map((r) => (
 
 const SortBy = () => {
     return (
-        <div class="sortBy">
+        <div className="sortBy">
             <Dropdown>
                 <label class="lblSortBy">SortBy: </label>
                 <Dropdown.Toggle variant="light" id="dropdown-basic">

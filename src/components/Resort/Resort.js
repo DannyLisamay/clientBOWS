@@ -2,7 +2,7 @@
 import React from 'react'
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Tab, Tabs } from 'react-bootstrap';
+import { Row, Tab, Tabs } from 'react-bootstrap';
 // WeatherWidget component 
 import WeatherWidget from './WeatherWidget'
 // ***EXAMPLE RESORT IMAGE FOR TESTING***

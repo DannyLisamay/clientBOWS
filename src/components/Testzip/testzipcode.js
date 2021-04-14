@@ -1,6 +1,8 @@
-/*
-import React from 'react';
+// Resort component 
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
+/*
 
 
 const userZipCode = "01851";
@@ -94,3 +96,41 @@ console.log(resortData[0].location.zip)
 
 export default showDistance;
 */
+
+const bowsAPIurl = "https://bows.herokuapp.com/";
+
+async function getResorts() {
+  try {
+    const response = await axios.get(bowsAPIurl);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+const Test = () => {
+  const [resortData, setSetData] = useState(null);
+  const getData = async () => {
+    try {
+      const data = await getResorts();
+      setSetData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    getData();
+  }, [])
+
+  return (
+    <div>
+      {
+        resortData !== null ? (
+          <p>{resortData[0].name}</p>
+        ) : null
+      }
+    </div>
+  );
+}
+
+export default Test;

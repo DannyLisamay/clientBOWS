@@ -30,7 +30,6 @@ const WeatherWidget = () => {
         getData();
     }, [])
 
-    console.log(weatherdata);
     return (<div>
         <h6>Weather Forcast</h6>
         {

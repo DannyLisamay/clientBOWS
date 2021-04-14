@@ -1,7 +1,7 @@
 //SEE TESTZIPCODE.JS FOR TRIAL RUN AND THOUGHT PROCESS
 
 import React from 'react';
-import Snowboarder from '../images/snowboarder.jpg'
+//import Snowboarder from '../images/snowboarder.jpg'
 import { Link } from "react-router-dom";
 
 //variable used for user input

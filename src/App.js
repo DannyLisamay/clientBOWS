@@ -13,7 +13,7 @@ import TestZip from './components/Testzip/testzipcode';
 
 function App() {
   return (
-    <div class="content">
+    <div className="content">
       <Router>
         <Navbar />
         <Switch>

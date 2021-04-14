@@ -27,7 +27,7 @@ const SortBy = () => {
     return (
         <div className="sortBy">
             <Dropdown>
-                <label class="lblSortBy">SortBy: </label>
+                <label className="lblSortBy">SortBy: </label>
                 <Dropdown.Toggle variant="light" id="dropdown-basic">
                     Select
                 </Dropdown.Toggle>
@@ -36,9 +36,9 @@ const SortBy = () => {
                     <Dropdown.Item href="#">Price</Dropdown.Item>
                     <Dropdown.Item href="#">Review</Dropdown.Item>
                 </Dropdown.Menu>
-                <div class="float-right">
-                    <label class="lblCompare">Select Three Resorts: </label>
-                    <button class="btnCompare btn btn-light">Compare</button>
+                <div className="float-right">
+                    <label className="lblCompare">Select Three Resorts: </label>
+                    <button className="btnCompare btn btn-light">Compare</button>
                 </div>
             </Dropdown>
         </div>

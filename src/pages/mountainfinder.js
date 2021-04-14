@@ -5,10 +5,10 @@ const Mountainfinder = () => {
         <div>
             <h1> Mountain Finder </h1>
 
-            <div class= "aboutme">
+            <div className="aboutme">
                 <p>
-                **FUTURE PAGE IF TIME PERMITS**
-                </p>  
+                    **FUTURE PAGE IF TIME PERMITS**
+                </p>
             </div>
 
         </div>

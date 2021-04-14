@@ -12,16 +12,16 @@ const Navbar = () => {
                 </NavLink>
                 <Bars />
                 <NavMenu>
-                    <NavLink to="/home" activeStyle>
+                    <NavLink to="/home">
                         HOME
                     </NavLink>
-                    <NavLink to="/mountainfinder" activeStyle>
+                    <NavLink to="/mountainfinder" >
                         MOUNTAIN FINDER
                     </NavLink>
-                    <NavLink to="/about" activeStyle>
+                    <NavLink to="/about" >
                         ABOUT US
                     </NavLink>
-                    <NavLink to="/contact" activeStyle>
+                    <NavLink to="/contact" >
                         CONTACT US
                     </NavLink>
                 </NavMenu>

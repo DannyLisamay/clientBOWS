@@ -1,8 +1,30 @@
-
+//SEE TESTZIPCODE.JS FOR TRIAL RUN AND THOUGHT PROCESS
 
 import React from 'react';
 import Snowboarder from '../images/snowboarder.jpg'
 import { Link } from "react-router-dom";
+
+//variable used for user input
+var userZipCode;
+//pre definded zipcode for testing
+const moutainZip = "03242";
+// UNQIUE API KEY DONT SHOW
+const apikey = 'nC8qTyVabyAPlnldpR89nTs4OmvWmdyJmGeaHoklFH71ul1StpMre3CNxOhpCOyy';
+//API used by getting apikey then having the userzipcode, and then having it compare to the second zipcode which is the mountainzipcode
+var apiDistance = `https://www.zipcodeapi.com/rest/${apikey}/distance.json/${userZipCode}/${moutainZip}/mile`;
+
+
+// this is using the API as a function to use as the textbox by grabbing the id
+// thus having it fetch the data and then console logging for now the data 
+const searchzipcode = (data) => {
+    userZipCode = document.getElementById('zipcode').value;
+    apiDistance = `https://www.zipcodeapi.com/rest/${apikey}/distance.json/${userZipCode}/${moutainZip}/mile`;
+    fetch(apiDistance)
+        .then(response => response.json())
+        .then(data => console.log(data));
+};
+
+
 
 const Home = () => {
     return (
@@ -14,11 +36,13 @@ const Home = () => {
             </div>
             <div class="background">
 
+
                 <div class="searchbar">
-                    <input type="text" class="searchbar" placeholder="Please enter your zipcode or a Resort name"></input>
+                    <input type="text" id="zipcode" class="searchbar" placeholder="Please enter your zipcode or a Resort name"></input>
 
                     <Link to="/compare">
-                        <button type="submit" class="searchbutton">SUBMIT </button>
+                        <button onClick={searchzipcode} class="searchbutton">SUBMIT </button>
+
                     </Link>
                 </div>
             </div>

@@ -9,6 +9,7 @@ import Mountainfinder from './pages/mountainfinder';
 import Resort from './pages/resort';
 import NotFoundPage from './pages/notfoundpage';
 import Compare from './pages/compare';
+import TestZip from './components/Testzip/testzipcode';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
           <Route path='/mountainfinder' component={Mountainfinder} />
           <Route path='/resort' component={Resort} />
           <Route path='/compare' component={Compare} />
+          <Route path='/testzipcode' component={TestZip} />
           <Route path="*" component={NotFoundPage} />
+
         </Switch>
       </Router>
     </div>

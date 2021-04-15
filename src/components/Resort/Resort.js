@@ -8,11 +8,15 @@ import WeatherWidget from './WeatherWidget'
 // ***EXAMPLE RESORT IMAGE FOR TESTING***
 import resortImg from '../../images/TrailMap.jpg';
 
+import { useLocation } from "react-router-dom";
+
+
 const ResortInfo = () => {
+    const { state } = useLocation();
     return (
         <div>
             <Row>
-                <h4>* RESORT NAME PLACE HOLDER*</h4>
+                <h4>{state.resort.name}</h4>
             </Row>
             <Row>
                 <a href="https://www.patspeak.com/"> https://www.patspeak.com/ </a>
@@ -26,6 +30,8 @@ const ResortInfo = () => {
 
 const ResortInfoTabBox1 = () => {
     // ***HARD CODED / PLACEHOLDERS FOR TESTING***
+    const { state } = useLocation();
+    console.log(state);
     // Tabs varibles
     var description = (<div>
         <h6>Description</h6>
@@ -69,6 +75,9 @@ const ResortInfoTabBox1 = () => {
 };
 
 const ResortInfoTabBox2 = () => {
+    const { state } = useLocation();
+    console.log(state);
+
     var activities = (<div>
         <h6>Activities</h6>
         <p>***ACTIVITIES PLACE HOLDER*** <br />
@@ -91,37 +100,21 @@ const ResortInfoTabBox2 = () => {
             <b> ***EQUIPMENT RENTAL*** </b> <br />
 
             <b> Skis, Boots & Poles Purchase:	Price: </b> <br />
-            Adult (18-64) : $40/day <br />
-            Junior (6-17)/Senior (65+): $36/day <br />
-            Child (5 & Under): $32/day <br />
-
-            <b> Premium Skis, Boots & Poles Purchase:	Price: </b> <br />
-            Adult (18-64)
-            $50/day
-            Junior (6-17)/Senior (65+)
-            $46/day <br />
-
-            <b> Twin Tip Skis, Boots & Poles Purchase:	Price: </b> <br />
-            Adult (18-64)
-            $50/day
-            Junior (6-17)/Senior (65+)
-            $46/day <br />
+            Adult (18-64) : ${state.resort.price.rental.skiBootsPole.adult}/day <br />
+            Junior (6-17)/Senior (65+): ${state.resort.price.rental.skiBootsPole.junior}/day <br />
+            Child (5 & Under): ${state.resort.price.rental.skiBootsPole.child}/day <br />
 
             <b> Snowboards & Boots Purchase:	Price: </b> <br />
             Adult (18-64)
-            $40/day
+            ${state.resort.price.rental.snowboardandBoots.adult}/day
             Junior (6-17)/Senior (65+)
-            $36/day
+            ${state.resort.price.rental.snowboardandBoots.junior}/day
             Child (5 & Under)
-            $32/day <br />
+            ${state.resort.price.rental.snowboardandBoots.child}/day <br />
 
             <b> Helmets Purchase:	Price: </b> <br />
             Helmets (All ages)
-            $12/day <br />
-            <b> Snowshoes  Purchase:	Price: </b> <br />
-            Snowshoes (All ages)
-            $19/day
-
+            ${state.resort.price.rental.helmet}/day <br />
 
         </p></div>);
     return (

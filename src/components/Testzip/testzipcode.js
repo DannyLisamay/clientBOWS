@@ -1,6 +1,7 @@
 // Resort component 
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { getResortsData } from '../Resort/data/bowsAPI';
 
 /*
 
@@ -97,22 +98,13 @@ console.log(resortData[0].location.zip)
 export default showDistance;
 */
 
-const bowsAPIurl = "https://bows.herokuapp.com/";
 
-async function getResorts() {
-  try {
-    const response = await axios.get(bowsAPIurl);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
-}
 
 const Test = () => {
   const [resortData, setSetData] = useState(null);
   const getData = async () => {
     try {
-      const data = await getResorts();
+      const data = await getResortsData();
       setSetData(data);
     } catch (error) {
       console.log(error);

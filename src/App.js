@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages';
 import About from './pages/about';
 import Contact from './pages/contact';
@@ -14,21 +14,21 @@ import TestZip from './components/Testzip/testzipcode';
 function App() {
   return (
     <div className="content">
-      <Router>
+      <BrowserRouter>
         <Navbar />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/home' component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/mountainfinder' component={Mountainfinder} />
-          <Route path='/resort' component={Resort} />
-          <Route path='/compare' component={Compare} />
-          <Route path='/testzipcode' component={TestZip} />
-          <Route path="*" component={NotFoundPage} />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/mountainfinder' element={<Mountainfinder />} />
+          <Route path='/resort' element={<Resort />} />
+          <Route path='/compare' element={<Compare />} />
+          <Route path='/testzipcode' element={<TestZip />} />
+          <Route path="*" element={<NotFoundPage />} />
 
-        </Switch>
-      </Router>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

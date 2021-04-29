@@ -1,28 +1,49 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
 
-const Contact = () => {
+//npm install emailjs-com --save
+
+export default function ContactUs() {
+
+
+    function sendEmail(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_m0e2fk1', 'BOWStemplate', e.target, 'user_IdY4EaXVpT6tDQT3L7I5U')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+                //this resets the input text fields
+
+            });
+        e.target.reset()
+
+    }
+
     return (
         <div>
             <h1> Contact Us </h1>
             <div className="form-group">
-                <form>
-                    <label htmlFor="name"> First and Last Name: </label>
-                    <input type="text" id="name" placeholder="First and Last name"></input> <br></br>
 
-                    <label htmlFor="message"> Message: </label>
-                    <textarea name="message" id="message" cols="30" rows="10" />
+                <form className="contact-form" onSubmit={sendEmail}>
 
-                    <label htmlFor="email"> Your Email: </label>
-                    <input type="text" id="email" placeholder="Please enter your email address"></input> <br></br>
+                    <label>Name</label>
+                    <input type="text" required name="name" />
 
-                    <button type="submit" className="searchbutton">SUBMIT </button>
+                    <label>Email</label>
+                    <input type="email" required name="email" />
+
+                    <label>Message</label>
+                    <textarea name="message" required />
+
+                    <input type="submit" value="Send" />
                 </form>
             </div>
 
-            <div id="status" className="success"> Success your email has been sent! </div>
+            <div id="status" className="success" hidden> Success your email has been sent! </div>
+
+            <p className="contact"> IF SUBMIT BUTTON DOES NOT WORK PLEASE CONTACT US DIRECTLY AT beonewiththesnow.uml@gmail.com </p>
         </div>
-
-    );
-};
-
-export default Contact;
+    )
+}

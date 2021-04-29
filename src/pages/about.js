@@ -6,7 +6,7 @@ const About = () => {
             <h1> About us </h1>
 
             <div className="aboutme">
-                <p >
+                <p className="aboutme">
                     Be One with the Snow is a web-based application that targets skiers
                     and snowboarders across the United States to find, organize, plan, and
                     experience mountains and ski resorts much easier. Consumers do not have

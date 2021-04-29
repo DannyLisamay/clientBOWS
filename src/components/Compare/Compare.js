@@ -1,27 +1,11 @@
 // Resort component 
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dropdown, Table } from 'react-bootstrap';
-// Example resorts... will pull real data from backend/database
-var resorts = [
-    { name: "Pats Peak", distance: "42 mi", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", price: "$100", rating: "5" },
-    { name: "Wachusetts", distance: "30 mi", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", price: "$60", rating: "4.5" },
-    { name: "Nashoba", distance: "22 mi", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", price: "$50", rating: "4.1" }
-];
-
-// Map for list resorts 
-const listResorts = resorts.map((r) => (
-    <tr key={r.name}>
-        <td><Link to="/resort"><b>{r.name}</b></Link></td>
-        <td>{r.distance}</td>
-        <td>{r.description}</td>
-        <td>{r.rating}</td>
-        <td>{r.price}</td>
-        <td><input type="checkbox"></input></td>
-    </tr>
-));
+// BOWS API
+import { getResortsData } from '../Resort/data/bowsAPI';
 
 const SortBy = () => {
     return (
@@ -36,16 +20,44 @@ const SortBy = () => {
                     <Dropdown.Item href="#">Price</Dropdown.Item>
                     <Dropdown.Item href="#">Review</Dropdown.Item>
                 </Dropdown.Menu>
-                <div className="float-right">
-                    <label className="lblCompare">Select Three Resorts: </label>
-                    <button className="btnCompare btn btn-light">Compare</button>
-                </div>
             </Dropdown>
         </div>
     )
 };
 
 const ResortList = () => {
+    // Pull all resorts from database
+    const navigate = useNavigate();
+    var listResorts;
+    const [resortData, setResortData] = useState(null);
+    const getData = async () => {
+        const navigateTo = (resort) => {
+            navigate('/resort', { state: { resort } });
+        }
+        const test = () => { console.log("TEST"); }
+        try {
+            const data = await getResortsData();
+            console.log(data);
+            listResorts = data.map((r) => (
+                <tr key={r.name}>
+                    <td> <b>{r.name}</b ></td>
+                    <td>n/a</td>
+                    <td>{r.description}</td>
+                    <td>na</td>
+                    <td>${r.price.ticket.weekdayFull}</td>
+                    <td><button class="btn btn-primary" onClick={navigateTo.bind(null, r)}>Okay</button></td>
+                </tr >
+            ));
+            setResortData(listResorts);
+        } catch (error) {
+            console.log(error);
+        }
+
+    };
+    useEffect(() => {
+        getData();
+    }, [])
+
     return (
         <Table striped bordered hover>
             <thead>
@@ -55,12 +67,16 @@ const ResortList = () => {
                     <th>Description</th>
                     <th>Review</th>
                     <th>Price</th>
-                    <th>Select</th>
+                    <th>Navigate</th>
                 </tr>
             </thead>
-            <tbody>
-                {listResorts}
-            </tbody>
+            {
+                resortData !== null ? (
+                    <tbody>
+                        {resortData}
+                    </tbody>
+                ) : null
+            }
         </Table>
     )
 };

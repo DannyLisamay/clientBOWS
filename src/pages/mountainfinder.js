@@ -6,7 +6,7 @@ const Mountainfinder = () => {
             <h1> Mountain Finder </h1>
 
             <div className="aboutme">
-                <p>
+                <p className="mountainfinder">
                     **FUTURE PAGE IF TIME PERMITS**
                 </p>
             </div>

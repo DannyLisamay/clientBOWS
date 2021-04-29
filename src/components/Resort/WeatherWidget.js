@@ -14,13 +14,13 @@ const day1 = days[date.getDay()];
 const day2 = days[(date.getDay() + 1) % 7];
 const day3 = days[(date.getDay() + 2) % 7];
 
-const WeatherWidget = () => {
+const WeatherWidget = (city) => {
     // weather Data
     // list data is unix UTC
     const [weatherdata, setWeatherData] = useState(null);
     const getData = async () => {
         try {
-            const data = await getWeatherData();
+            const data = await getWeatherData(city);
             setWeatherData(data);
         } catch (error) {
             console.log(error);

@@ -12,19 +12,39 @@ code {
     monospace;
 }
 
-.aboutme {
-  color: white;
+
+p.aboutme {
+  color: black;
   text-align: center;
   font-size: 25px;
-  background : #000;
+  background: lightgray;
     height: auto;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem calc((100vw - 1000px) / 2) ;
+    padding-left: 5%;
+    padding-right: 5%;
     z-index: 100; 
-  margin-right: 5%;
-  margin-left: 5%;
-  border: 2px solid blue;
+  margin-right: 0%;
+  margin-left: 0%;
+  border: 2px solid white;
+}
+
+p.homepage {
+  color: black;
+  text-align: center;
+  font-size: 25px;
+}
+
+p.contact {
+  color: black;
+  text-align: center;
+  font-size: 25px;
+}
+
+p.mountainfinder {
+  color: black;
+  text-align: center;
+  font-size: 25px;
 }
 
 h1 {
@@ -181,4 +201,3 @@ form{
   min-width: 10%;
   padding-right: 5px;
 }
-

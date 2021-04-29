@@ -4,15 +4,17 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Tab, Tabs } from 'react-bootstrap';
 // WeatherWidget component 
-import WeatherWidget from './WeatherWidget'
-// ***EXAMPLE RESORT IMAGE FOR TESTING***
-import resortImg from '../../images/TrailMap.jpg';
-
+import WeatherWidget from './WeatherWidget';
+// Hook returns location of object.
 import { useLocation } from "react-router-dom";
+// Import all images
+const images = require.context("./images/", true);
 
-
-const ResortInfo = () => {
+const ResortInfo = (props) => {
     const { state } = useLocation();
+    console.log(state);
+    // Image path
+    const resortIMG = images("./" + state.resort.img).default;
     return (
         <div>
             <Row>
@@ -22,16 +24,14 @@ const ResortInfo = () => {
                 <a href={state.resort.link}> {state.resort.link} </a>
             </Row>
             <Row>
-                <img src={resortImg} alt="resortImg" style={{ width: "100%" }} />
+                <img src={resortIMG} alt="resortImg" style={{ width: "100%" }} />
             </Row>
         </div>
     )
 };
 
 const ResortInfoTabBox1 = () => {
-    // ***HARD CODED / PLACEHOLDERS FOR TESTING***
     const { state } = useLocation();
-    console.log(state);
     // Tabs varibles
     var description = (<div>
         <h6>Description</h6>
@@ -39,12 +39,15 @@ const ResortInfoTabBox1 = () => {
     </div>);
 
     var mountain = (<div>
-        <h6>Description</h6>
-        <p>***MOUNTAIN PLACE HOLDER*** <br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <h6>Mountain</h6>
+        <p>•Summit Elevation: <br /> </p>
+        <p>•Vertical Drop: 1000 ft<br /> </p>
+        <p>•Lifts: 8<br /> </p>
+        <p>•Trails: 12<br /> </p>
+        <p>•Terrain Park: 2<br /> </p>
+        <p>•Available Terrains: Beginner, Intermediate, Advanced, Expert<br /> </p>
     </div>);
-    var weather = WeatherWidget();
+    var weather = WeatherWidget(state.resort.location.city);
 
     var snow = (<div>
         <h6>Snow Report</h6>
@@ -74,7 +77,6 @@ const ResortInfoTabBox1 = () => {
 
 const ResortInfoTabBox2 = () => {
     const { state } = useLocation();
-    console.log(state);
 
     var activities = (<div>
         <h6>Activities</h6>

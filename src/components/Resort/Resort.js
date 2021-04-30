@@ -40,20 +40,20 @@ const ResortInfoTabBox1 = () => {
 
     var mountain = (<div>
         <h6>Mountain</h6>
-        <p>•Summit Elevation: <br /> </p>
-        <p>•Vertical Drop: 1000 ft<br /> </p>
-        <p>•Lifts: 8<br /> </p>
-        <p>•Trails: 12<br /> </p>
-        <p>•Terrain Park: 2<br /> </p>
-        <p>•Available Terrains: Beginner, Intermediate, Advanced, Expert<br /> </p>
+        <p>
+            {state.resort.mountain[0]} <br />
+            {state.resort.mountain[1]} <br />
+            {state.resort.mountain[2]} <br />
+            {state.resort.mountain[3]} <br />
+        </p>
     </div>);
     var weather = WeatherWidget(state.resort.location.city);
+    var directions = (<div>
+        <h6>Directions</h6>
 
-    var snow = (<div>
-        <h6>Snow Report</h6>
-        <p>***DESCRIPTION PLACE HOLDER*** <br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <iframe src={state.resort.directions.link} width="600" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>
+
+
     </div>);
     return (
         <div className="tabBox">
@@ -67,8 +67,8 @@ const ResortInfoTabBox1 = () => {
                 <Tab eventKey="Weather" title="Weather">
                     {weather}
                 </Tab>
-                <Tab eventKey="Snow" title="Snow">
-                    {snow}
+                <Tab eventKey="directions" title="Directions">
+                    {directions}
                 </Tab>
             </Tabs>
         </div>
@@ -80,20 +80,32 @@ const ResortInfoTabBox2 = () => {
 
     var activities = (<div>
         <h6>Activities</h6>
-        <p>***ACTIVITIES PLACE HOLDER*** <br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <p>
+            {state.resort.activities[0]} <br />
+            {state.resort.activities[1]} <br />
+            {state.resort.activities[2]} <br />
         </p>
     </div>);
 
     var events = (<div>
-        <p>***EVENTS PLACE HOLDER***<br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p></div>);
+        <h6>Events</h6>
+        <p>
+            {state.resort.events[0]} <br />
+            {state.resort.events[1]} <br />
+            {state.resort.events[2]} <br />
+
+        </p></div>);
 
     var reviews = (<div>
-        <p>***REVIEW PLACE HOLDER***<br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p></div>);
+        <h6>Reviews</h6>
+        <p>
+            <span className="yelp-review" data-review-id={state.resort.yelpreviews.id} data-hostname="www.yelp.com">
+                <a href={state.resort.yelpreviews.person} rel="nofollow noopener"></a>
+                <a href={state.resort.yelpreviews.placelink} rel="nofollow noopener"></a>
+            </span>
+
+        </p>
+    </div>);
 
     var prices = (<div>
         <p>

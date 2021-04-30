@@ -15,8 +15,8 @@ const Navbar = () => {
                     <NavLink to="/home">
                         HOME
                     </NavLink>
-                    <NavLink to="/mountainfinder" >
-                        MOUNTAIN FINDER
+                    <NavLink to="/resorts" >
+                        RESORTS
                     </NavLink>
                     <NavLink to="/about" >
                         ABOUT US

@@ -41,11 +41,11 @@ const ResortList = () => {
             listResorts = data.map((r) => (
                 <tr key={r.name}>
                     <td> <b>{r.name}</b ></td>
-                    <td>n/a</td>
+                    <td>{r.location.city}</td>
                     <td>{r.description}</td>
-                    <td>na</td>
+                    <td>{r.reviews.rating}</td>
                     <td>${r.price.ticket.weekdayFull}</td>
-                    <td><button class="btn btn-primary" onClick={navigateTo.bind(null, r)}>Okay</button></td>
+                    <td><button class="btn btn-primary" onClick={navigateTo.bind(null, r)}>View</button></td>
                 </tr >
             ));
             setResortData(listResorts);
@@ -63,11 +63,11 @@ const ResortList = () => {
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Distance</th>
+                    <th>City</th>
                     <th>Description</th>
-                    <th>Review</th>
+                    <th>Rating</th>
                     <th>Price</th>
-                    <th>Navigate</th>
+                    <th>Select</th>
                 </tr>
             </thead>
             {

@@ -21,7 +21,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/mountainfinder' element={<Mountainfinder />} />
+          <Route path='/resorts' element={<Compare />} />
           <Route path='/resort' element={<Resort />} />
           <Route path='/compare' element={<Compare />} />
           <Route path='/testzipcode' element={<TestZip />} />
